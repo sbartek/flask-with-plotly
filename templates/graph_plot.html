@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">    
+  <div class="col-md-12">
+    <form action="" method="post">
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="year">
+            {% for year in years %}
+            <option value="{{year}}" {% if  year==current_year %} selected="selected"{% endif %}>{{year}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">    
+  <div class="col-md-12">
+    <div class="chart" id="bargraph">
+      <script>
+       var graphs = {{plot | safe}};
+       Plotly.plot('bargraph', graphs,{});
+      </script>
+    </div>
+  </div>
+</div>
+{% endblock %}

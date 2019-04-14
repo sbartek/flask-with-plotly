@@ -12,11 +12,10 @@ class Graph:
 
     def __init__(self):
         self.data_reader = DataReader()
-        print(self.data_reader.years)
         
-    def get_plot(self):
+    def get_plot(self, year=1967):
 
-        df = self.data_reader.df()
+        df = self.data_reader.df(year=year)
         trace = go.Scatter(
             x = df["dt"],
             y = df["sales"]
@@ -24,3 +23,7 @@ class Graph:
         data = [trace]        
         graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
         return graphJSON
+
+    @property
+    def years(self):
+        return list(self.data_reader.years)
