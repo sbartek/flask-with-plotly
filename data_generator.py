@@ -34,12 +34,12 @@ class DataWriter:
 
     def __init__(
             self,
-            size,
+            data_size,
             scale,
             index_col_name,
             value_col_name):
 
-        self.data_generator = BrownianDataGenerator(size, scale)
+        self.data_generator = BrownianDataGenerator(data_size, scale)
         self.sequence_writer = SequenceWriter(index_col_name, value_col_name)
 
     def generate_and_write(self, output_fn):
