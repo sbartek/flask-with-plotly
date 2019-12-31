@@ -18,6 +18,6 @@ spec:
     ports:
     - containerPort: 80
       protocol: TCP
-volumes:
+  volumes:
   - name: datasource
     emptyDir: {}
