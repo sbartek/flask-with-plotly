@@ -1,0 +1,6 @@
+numpy
+pandas
+Flask
+plotly
+gunicorn
+pyyaml

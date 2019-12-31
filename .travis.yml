@@ -5,7 +5,9 @@ services:
   - docker
 before_install:
   - docker build --tag $DOCKER_USERNAME/datageneratorapp -f datageneratorapp/Dockerfile .
+  - docker build --tag $DOCKER_USERNAME/datagenerateddashboard -f datagenerateddashboard/Dockerfile .
   - docker images
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 script:
   - docker push $DOCKER_USERNAME/datageneratorapp
+  - docker push $DOCKER_USERNAME/datagenerateddashboard

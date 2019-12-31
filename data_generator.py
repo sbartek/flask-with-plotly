@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 import pandas as pd
 
@@ -49,5 +51,7 @@ class DataWriter:
 class DataReader:
 
     def data_frame(self, path):
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"File {path} does not exist!")
         return pd.read_json(path, orient='records')
         
