@@ -14,8 +14,7 @@ def create_app(config_fn=""):
     app.config['app_config'] = app_config
     return app
 
-#app = create_app(config_fn="flask_app_config.yaml")
-app = create_app(config_fn="")
+app = create_app(config_fn="flask_app_config.yaml")
     
 @app.route('/', methods=['GET', 'POST'])
 def brownian_plot():

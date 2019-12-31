@@ -8,3 +8,7 @@ app:
 .PHONY: data
 data:
 	python generate_data.py
+
+.PHONY: docker_generator_app
+docker_generator_app:
+	sh generator_loop.sh datageneratorapp/config.yaml
