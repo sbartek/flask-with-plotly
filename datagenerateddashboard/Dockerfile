@@ -4,4 +4,5 @@ COPY . /app
 COPY datagenerateddashboard/config.yaml /app/flask_app_config.yaml
 RUN pip install -r datagenerateddashboard/requirements.txt
 RUN mkdir /var/datasource
-ENTRYPOINT ["gunicorn", "app:app", "--bind", "0.0.0.0:80"]
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:80"]
+CMD ["app:create_app()"]

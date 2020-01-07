@@ -3,5 +3,6 @@ WORKDIR /app
 COPY . /app
 RUN pip install -r datageneratorapp/requirements.txt
 RUN mkdir /var/dataSink
-ENTRYPOINT ["generator_loop.sh", "--data_path=/var/dataSink/data.json"]
+ENTRYPOINT ["sbin/generator_loop.sh"]
+CMD ["--data_path=/var/dataSink/data.json"]
 

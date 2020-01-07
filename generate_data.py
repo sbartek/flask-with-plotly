@@ -27,7 +27,10 @@ def generate_data(**kwargs):
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config_fn", default="generator_config.yaml", type=str)
+    parser.add_argument(
+        "--config_fn",
+        default="config/generator_config.yaml",
+        type=str)
     parser.add_argument("--data_path", type=str)
     return parser.parse_args()
     

@@ -1,6 +1,6 @@
 import yaml
 
-DEFAULT_CONFIG_FN = "default_config.yaml"
+DEFAULT_CONFIG_FN = "config/default_config.yaml"
 
 def parse_config(config_fn):
     with open(config_fn) as f:
