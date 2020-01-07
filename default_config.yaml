@@ -1,9 +1,0 @@
-data_path: 'data/random_data.json'
-index_col_name: "time"
-value_col_name: "value"
-data_size: 10
-scale: 0.1
-colors:
- - 'blue'
- - 'red'
-

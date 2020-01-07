@@ -1,7 +1,10 @@
 .PHONY: app
 
+flask_app:
+	python app.py
+
 app:
-	gunicorn app:app --bind 0.0.0.0:80\
+	gunicorn "app:create_app()" --bind 0.0.0.0:80\
          --access-logfile logs/gunicorn-access.log\
          --error-logfile logs/gunicorn-error.log
 
@@ -9,6 +12,15 @@ app:
 data:
 	python generate_data.py
 
-.PHONY: docker_generator_app
-docker_generator_app:
-	sh generator_loop.sh datageneratorapp/config.yaml
+.PHONY: build_generator_docker
+build_generator_docker:
+	docker build --tag barteks/datageneratorapp -f datageneratorapp/Dockerfile .
+
+.PHONY: run_generator_docker
+run_generator_docker:
+	docker run --name=datageneratorapp barteks/datageneratorapp
+
+.PHONY: build_dashboard_docker
+build_dashboard_docker:
+	docker build --tag barteks/datagenerateddashboard -f datagenerateddashboard/Dockerfile .
+
