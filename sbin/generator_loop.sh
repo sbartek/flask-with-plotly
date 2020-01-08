@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 command="python generate_data.py $@"
 
 echo $command
