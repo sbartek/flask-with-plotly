@@ -22,3 +22,6 @@ run_generator_docker:
 build_dashboard_docker:
 	docker build --tag barteks/datagenerateddashboard -f datagenerateddashboard/Dockerfile .
 
+.PHONY: run_dashboard_docker
+run_dashboard_docker:
+	docker run --publish=80:80 barteks/datagenerateddashboard
