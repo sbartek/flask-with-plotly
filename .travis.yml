@@ -11,5 +11,4 @@ before_install:
   - docker push $DOCKER_USERNAME/datageneratorapp
   - docker push $DOCKER_USERNAME/datagenerateddashboard
 script:
-  - docker run --name=datageneratorapp barteks/datageneratorapp --data_path=/var/dataSink/test_data.json
-  - docker run --name=datageneratorapp $DOCKER_USERNAME/datagenerateddashboard --data_path=/var/dataSink/test_data.json
+  - docker run --entrypoint "./generate_data.py" $DOCKER_USERNAME/datageneratorapp
