@@ -25,3 +25,11 @@ build_dashboard_docker:
 .PHONY: run_dashboard_docker
 run_dashboard_docker:
 	docker run --publish=80:80 barteks/datagenerateddashboard
+
+.PHONY: create_k8s_app
+create_k8s_app:
+	kubectl apply -f datageneratordash-k8s/datageneratordash-pod.yaml
+
+.PHONY: dash_port_forward
+dash_port_forward:
+	kubectl port-forward datageneratordash 8081:80

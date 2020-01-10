@@ -6,11 +6,13 @@ spec:
   containers:
   - image: barteks/datageneratorapp
     name: datagenerator
+    args: ["--data_path=/var/datasink/data.json"]
     volumeMounts:
     - name: datasource
       mountPath: /var/datasink
   - image: barteks/datagenerateddashboard
     name: dashboard
+    args: ["--data_path=/var/datasource/data.json"]
     volumeMounts:
     - name: datasource
       mountPath: /var/datasource
