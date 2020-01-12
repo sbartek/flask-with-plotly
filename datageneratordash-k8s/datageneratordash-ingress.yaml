@@ -10,4 +10,4 @@ spec:
       - path: /
         backend:
           serviceName: datageneratordash-nodeport
-          servicePort: 80
+          servicePort: serviceflask

@@ -29,6 +29,8 @@ run_dashboard_docker:
 .PHONY: create_k8s_app
 create_k8s_app:
 	kubectl apply -f datageneratordash-k8s/datageneratordash-pod.yaml
+	kubectl apply -f datageneratordash-k8s/datageneratordash-svc-nodeport.yaml
+	kubectl apply -f datageneratordash-k8s/datageneratordash-ingress.yaml
 
 .PHONY: dash_port_forward
 dash_port_forward:

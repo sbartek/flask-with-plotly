@@ -5,7 +5,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 80
+  - name: serviceflask
+    port: 80
     targetPort: httpflask
   selector:
     app: datageneratordash
