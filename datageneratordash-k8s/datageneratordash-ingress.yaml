@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: datageneratordashboard
+spec:
+  rules:
+  - host: datageneratordashboard.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: datageneratordash-nodeport
+          servicePort: 80
