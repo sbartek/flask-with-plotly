@@ -1,5 +1,11 @@
 # Flask with ploty
 
+## Install
+
+``` shell
+pip install -r requirements.txt
+```
+
 ## Generate data
 
 ``` shell
